@@ -3,37 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>PetLindo - PetShop</title>
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style>
-    body { background:#f7fafc; color:#5a4300; font-family:Arial, sans-serif; }
-    header { background:#f9db4a; padding:20px; }
-    .brand-img { width:60px; height:60px; border-radius:10px; object-fit:cover; }
-    .category, .service, .form-section { background:white; padding:20px; border-radius:12px; margin-bottom:20px; }
-    .price { color:#b88600; font-weight:bold; }
-    footer { background:#efb810; padding:20px; margin-top:40px; }
+    :root{--accent:#f9db4a;--muted:#d3a007;--card:#ffffff;--bg:#f7fafc}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#b88900}
+    header{background:linear-gradient(90deg,#ffffff88, #f9db4a);border-bottom:1px solid #e6e6e6}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand img{width:56px;height:56px;border-radius:8px;object-fit:cover}
+    nav{margin-left:auto}
+    nav a{margin:0 10px;color:var(--muted);text-decoration:none;font-weight:600}
+    header .top{display:flex;align-items:center}
+
+    main{padding:28px 0}
+    h1,h2{margin:0 0 12px 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+
+    .category{background:var(--card);border-radius:14px;padding:14px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    .category h3{margin:0 0 10px 0}
+    .products{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .card{background:#fff;border-radius:10px;padding:10px;display:flex;gap:10px;align-items:center;border:1px solid #eef2f7}
+    .card img{width:70px;height:70px;border-radius:8px;object-fit:cover}
+    .card .info{flex:1}
+    .price{font-weight:700;color:var(--accent)}
+
+    .services{display:grid;grid-template-columns:1fr;gap:10px}
+    .service{background:#fff;padding:12px;border-radius:10px;border:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:center}
+    .service .meta{color:var(--muted)}
+
+    footer{background:#efb810;color:#b57c00;padding:20px 0;margin-top:26px}
+    footer .foot-inner{max-width:1100px;margin:0 auto;display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}
+    footer a{color:#bfdbfe;text-decoration:none}
+
+    /* small search bar and responsiveness */
+    .search-row{display:flex;gap:10px;margin-bottom:14px}
+    .search-row input{flex:1;padding:10px;border-radius:8px;border:1px solid #d1d5db}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+
+    @media (max-width:640px){.products{grid-template-columns:1fr}.brand img{width:48px;height:48px}}
   </style>
 </head>
-
 <body>
+  <header>
+    <div class="container top">
+      <div class="brand">
+        <img src="C:\Users\arist\Downloads\cachorrinho.jpg" alt="logo PetLindo">
+        <div>
+          <strong>PetLindo</strong>
+          <div style="font-size:13px;color:var(--muted)">Seu pet mais feliz — loja & serviços</div>
+        </div>
+      </div>
 
-<header class="d-flex justify-content-between align-items-center">
-  <div class="d-flex align-items-center gap-3">
-    <img class="brand-img" src="https://placehold.co/100x100?text=Pet" alt="Logo do PetLindo, um pet simpático posando para foto">
-    <h2 class="m-0">PetLindo</h2>
-  </div>
-
-  <nav>
-    <a href="#produtos" class="me-3">Produtos</a>
-    <a href="#servicos" class="me-3">Serviços</a>
-    <a href="#cadastro" class="me-3">Cadastro</a>
-    <a href="#agendamento">Agendamento</a>
-  </nav>
-</header>
+      <nav>
+        <a href="#home">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
 
 <main class="container my-4">
 
@@ -188,3 +217,4 @@
 
 </body>
 </html>
+
